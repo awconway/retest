@@ -13,7 +13,7 @@
 #' 
 #' @export
 plot <- function(x,y){
-ggplot2::ggplot(data = temperature, aes(x = x, y = y, group = ID)) + 
+ggplot2::ggplot(data = temperature, aes(x = {{x}}, y = {{ y }}, group = ID)) + 
   geom_line(aes(colour=ID), show.legend=F) + 
   labs(x="Measurement", y="Temperature") + theme_bw() + 
   theme(panel.border = element_blank(),  
